@@ -21,7 +21,7 @@ This repository contains the necessary files to get started with building your N
 ### Starting the Application
 To start the application, navigate to the root directory of the project and run the following command:
 
-docker-compose -p network up -d
+`docker-compose -p network up -d`
 
 
 Feel free to modify and extend the provided configuration to suit your specific requirements.
