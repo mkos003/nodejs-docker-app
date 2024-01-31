@@ -1,0 +1,40 @@
+version: "3.8"
+
+services: 
+  nodejs:
+    # Dockerfile build for Node.js
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: nodejs_network
+    restart: always
+    ports: 
+      - 300:300
+    volumes: 
+      - ./myapp:/app
+      - /app/node_modules
+    depends_on: 
+      - mysql
+  # MySQL image for databse
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_network
+    restart: always
+    ports:
+      - 400:400
+    environment: 
+      - MYSQL_ROOT_USER=rootUser
+      - MYSQL_ROOT_PASSWORD=rootPassword
+    volumes:
+      - ./mysql:/var/lib/mysql
+  # PhpMyAdmin image database's gui
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: phpmyadmin_network
+    environment:
+    - PMA_ARBITRARY=1
+    restart: always
+    ports:
+    - 500:500
+
+    
