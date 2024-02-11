@@ -9,7 +9,7 @@ services:
     container_name: nodejs_network
     restart: always
     ports: 
-      - 300:300
+      - 500:80
     volumes: 
       - ./myapp:/app
       - /app/node_modules
