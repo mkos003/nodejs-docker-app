@@ -13,28 +13,5 @@ services:
     volumes: 
       - ./myapp:/app
       - /app/node_modules
-    depends_on: 
-      - mysql
-  # MySQL image for database
-  mysql:
-    image: mysql:8.0
-    container_name: mysql_network
-    restart: always
-    ports:
-      - 400:400
-    environment: 
-      - MYSQL_ROOT_USER=rootUser
-      - MYSQL_ROOT_PASSWORD=rootPassword
-    volumes:
-      - ./mysql:/var/lib/mysql
-  # PhpMyAdmin image database's gui
-  phpmyadmin:
-    image: phpmyadmin
-    container_name: phpmyadmin_network
-    environment:
-    - PMA_ARBITRARY=1
-    restart: always
-    ports:
-    - 500:500
 
     
