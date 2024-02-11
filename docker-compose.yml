@@ -15,7 +15,7 @@ services:
       - /app/node_modules
     depends_on: 
       - mysql
-  # MySQL image for databse
+  # MySQL image for database
   mysql:
     image: mysql:8.0
     container_name: mysql_network
