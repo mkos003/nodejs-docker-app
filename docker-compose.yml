@@ -6,7 +6,7 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile
-    container_name: nodejs_network
+    container_name: nodejs
     restart: always
     ports: 
       - 500:80
